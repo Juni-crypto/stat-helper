@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stat-Helper | K8s & Docker Monitor</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="simple-style.css">
+</head>
+<body>
+    <!-- Minimal Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <span>Stat-Helper</span>
+            </div>
+            <nav>
+                <a href="#features">Features</a>
+                <a href="#install">Install</a>
+                <a href="https://github.com/Juni-crypto/stat-helper" class="github-btn">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Simple Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Stat-Helper</h1>
+                <p>Simple terminal monitoring for Kubernetes & Docker</p>
+                <div class="hero-buttons">
+                    <a href="#install" class="btn primary-btn">Get Started</a>
+                    <a href="https://github.com/Juni-crypto/stat-helper" class="btn secondary-btn">View on GitHub</a>
+                </div>
+            </div>
+            <div class="hero-terminal">                <div class="terminal-tabs">
+                    <button class="tab-btn active" data-tab="main">Main</button>
+                    <button class="tab-btn" data-tab="kubernetes">Kubernetes</button>
+                    <button class="tab-btn" data-tab="docker">Docker</button>
+                </div>
+                <div class="terminal-screens">
+                    <!-- Main Screen -->
+                    <div class="terminal tab-content active" data-tab="main">
+                        <div class="terminal-header">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                            <span class="title">stat-helper.sh</span>
+                        </div>
+                        <div class="terminal-body">
+                            <pre><span class="prompt">$</span> <span class="command">./stat-helper.sh</span>
+┌──────────────────────────────────────────────────────────────────┐
+│           Kubernetes & Docker Monitoring Tool                    │
+├──────────────────────────────────────────────────────────────────┤
+│ Date:                                      2025-05-13 10:42:15   │
+│ User:                                      admin                 │
+│ Host:                                      workstation           │
+├──────────────────────────────────────────────────────────────────┤
+│           Developed by Juni-Crypto @ ChumaoruWorks Club          │
+│               https://github.com/Juni-crypto                     │
+├──────────────────────────────────────────────────────────────────┤
+│                         System Status                            │
+│ Kubernetes:             <span class="active">● Active</span> (v1.27.3)                       │
+│ Docker:                 <span class="active">● Active</span> (v24.0.5)                       │
+│ Host Resources:         CPU: 32%  MEM: 47%  DISK: 23%            │
+└──────────────────────────────────────────────────────────────────┘
+
+<span class="prompt">$</span> <span class="cursor">_</span></pre>
+                        </div>
+                    </div>
+
+                    <!-- Kubernetes Screen -->
+                    <div class="terminal tab-content" data-tab="kubernetes">
+                        <div class="terminal-header">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                            <span class="title">stat-helper.sh --kubernetes</span>
+                        </div>
+                        <div class="terminal-body">
+                            <pre><span class="prompt">$</span> <span class="command">./stat-helper.sh --kubernetes</span>
+┌──────────────────────────────────────────────────────────────────┐
+│                    KUBERNETES DASHBOARD                          │
+├──────────────────────────────────────────────────────────────────┤
+│ NAMESPACE    NAME                     READY     STATUS           │
+├──────────────────────────────────────────────────────────────────┤
+│ default      web-app-84f8d48b6c-j6mgz <span class="active">1/1</span>      <span class="active">Running</span>          │
+│ default      db-56468d7d5c-vz9j9     <span class="active">1/1</span>      <span class="active">Running</span>          │
+│ monitoring   prometheus-5bc6c67877-k <span class="active">1/1</span>      <span class="active">Running</span>          │
+│ kube-system  coredns-59b4f5bbd5-trfk <span class="active">1/1</span>      <span class="active">Running</span>          │
+│ kube-system  etcd-master              <span class="active">1/1</span>      <span class="active">Running</span>          │
+├──────────────────────────────────────────────────────────────────┤
+│ RESOURCE UTILIZATION                                             │
+├──────────────────────────────────────────────────────────────────┤
+│ Cluster CPU:    [#########.................] 45%                 │
+│ Cluster Memory: [############..............] 58%                 │
+│ Pod Count:      12/50                                            │
+└──────────────────────────────────────────────────────────────────┘
+
+<span class="prompt">$</span> <span class="cursor">_</span></pre>
+                        </div>
+                    </div>
+
+                    <!-- Docker Screen -->
+                    <div class="terminal tab-content" data-tab="docker">
+                        <div class="terminal-header">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                            <span class="title">stat-helper.sh --docker</span>
+                        </div>
+                        <div class="terminal-body">
+                            <pre><span class="prompt">$</span> <span class="command">./stat-helper.sh --docker</span>
+┌──────────────────────────────────────────────────────────────────┐
+│                     DOCKER CONTAINERS                            │
+├──────────────────────────────────────────────────────────────────┤
+│ CONTAINER ID    NAME               STATUS     CPU     MEM        │
+├──────────────────────────────────────────────────────────────────┤
+│ f8d3e1a92c7b    web-server        <span class="active">●</span> Up      0.5%    124MB      │
+│ a2c6e73f91d4    postgres-db       <span class="active">●</span> Up      1.2%    356MB      │
+│ c9b12f854e32    redis-cache       <span class="active">●</span> Up      0.3%    42MB       │
+│ e5f7d8a1b69c    nginx-proxy       <span class="active">●</span> Up      0.1%    12MB       │
+├──────────────────────────────────────────────────────────────────┤
+│ RESOURCES                                                        │
+├──────────────────────────────────────────────────────────────────┤
+│ CPU Usage:    [######...................] 29%                    │
+│ Memory Usage: [########.................] 37%                    │
+│ Disk Usage:   [#####....................] 23%                    │
+└──────────────────────────────────────────────────────────────────┘
+
+<span class="prompt">$</span> <span class="cursor">_</span></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>    <!-- Simplified Features -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2>What It Does</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <i class="fas fa-dharmachakra"></i>
+                    <h3>Kubernetes Monitoring</h3>
+                    <p>Real-time monitoring of pods, services, deployments and node health</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fab fa-docker"></i>
+                    <h3>Docker Management</h3>
+                    <p>Track container status, resource usage and performance metrics</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-terminal"></i>
+                    <h3>Terminal-Based UI</h3>
+                    <p>Clean, lightweight interface that works in any terminal</p>
+                </div>
+            </div>
+            <div class="why-terminal">
+                <h3>Why Terminal-Based Tools Excel</h3>
+                <p>Modern DevOps demands efficiency and simplicity. Terminal-based monitoring provides:</p>
+                <ul>
+                    <li><i class="fas fa-tachometer-alt"></i> <strong>Lightweight:</strong> Minimal resource footprint compared to heavy web dashboards, keeping your system resources free</li>
+                    <li><i class="fas fa-shield-alt"></i> <strong>Security-focused:</strong> No additional services or ports exposed, reducing your attack surface significantly</li>
+                    <li><i class="fas fa-rocket"></i> <strong>Lightning-fast:</strong> Instant access to critical information without browser loading times</li>
+                    <li><i class="fas fa-laptop-code"></i> <strong>Remote-friendly:</strong> Works seamlessly over SSH connections even on low-bandwidth networks</li>
+                    <li><i class="fas fa-cogs"></i> <strong>Automation-ready:</strong> Easy integration with scripts and CI/CD pipelines</li>
+                    <li><i class="fas fa-server"></i> <strong>Server-efficient:</strong> Perfect for headless servers where GUI tools aren't practical</li>
+                </ul>
+            </div>
+        </div>
+    </section>    <!-- Simple Installation -->
+    <section id="install" class="install">
+        <div class="container">
+            <h2>Install in seconds</h2>
+            <div class="install-box">
+                <div class="terminal-install">
+                    <div class="terminal-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                        <span class="title">Terminal</span>
+                    </div>
+                    <div class="terminal-body install-steps">
+                        <pre><span class="prompt">$</span> <span class="command">git clone https://github.com/Juni-crypto/stat-helper.git</span>
+<span class="output">Cloning into 'stat-helper'...
+remote: Enumerating objects: 52, done.
+remote: Counting objects: 100% (52/52), done.
+remote: Compressing objects: 100% (38/38), done.
+remote: Total 52 (delta 14), reused 52 (delta 14)
+Receiving objects: 100% (52/52), 24.6 kb, done.</span>
+
+<span class="prompt">$</span> <span class="command">cd stat-helper</span>
+
+<span class="prompt">$</span> <span class="command">chmod +x stat-helper.sh</span>
+
+<span class="prompt">$</span> <span class="command">./stat-helper.sh</span>
+<span class="output">Loading Stat-Helper...
+Checking dependencies...
+Starting monitoring services...</span>
+
+<span class="loading-bar"><span class="progress"></span></span>
+                        </pre>
+                    </div>
+                </div>
+                <button class="copy-all-btn" data-clipboard-text="git clone https://github.com/Juni-crypto/stat-helper.git
+cd stat-helper
+chmod +x stat-helper.sh
+./stat-helper.sh">Copy All Commands <i class="fas fa-copy"></i></button>
+            </div>
+            <div class="requirements">
+                <h3>Prerequisites</h3>
+                <div class="req-badges">
+                    <span class="req-badge"><i class="fas fa-terminal"></i> Bash</span>
+                    <span class="req-badge"><i class="fas fa-dharmachakra"></i> kubectl</span>
+                    <span class="req-badge"><i class="fab fa-docker"></i> Docker</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Minimal Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2025 <a href="https://github.com/Juni-crypto">Juni-Crypto</a> @ <a href="https://chumaoruworks.com">ChumaoruWorks Club</a></p>
+            <div class="footer-links">
+                <a href="https://github.com/Juni-crypto/stat-helper">GitHub</a>
+                <a href="README.md">Docs</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Terminal cursor blinking
+            const cursors = document.querySelectorAll('.cursor');
+            setInterval(() => {
+                cursors.forEach(cursor => {
+                    cursor.style.opacity = cursor.style.opacity === '0' ? '1' : '0';
+                });
+            }, 600);
+
+            // Terminal tabs functionality
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const tabName = button.getAttribute('data-tab');
+                    
+                    // Update active tab button
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    
+                    // Show the selected tab content
+                    tabContents.forEach(content => {
+                        if (content.getAttribute('data-tab') === tabName) {
+                            content.classList.add('active');
+                        } else {
+                            content.classList.remove('active');
+                        }
+                    });
+                });
+            });            // Copy button functionality
+            new ClipboardJS('.copy-all-btn');
+            document.querySelector('.copy-all-btn').addEventListener('click', function() {
+                const originalText = this.innerHTML;
+                this.innerHTML = 'Copied! <i class="fas fa-check"></i>';
+                setTimeout(() => {
+                    this.innerHTML = originalText;
+                }, 1500);
+            });
+            
+            // Simple animations on scroll
+            const cards = document.querySelectorAll('.feature-card');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            cards.forEach(card => {
+                observer.observe(card);
+            });
+            
+            // Also observe and animate the why-terminal section
+            const whyTerminal = document.querySelector('.why-terminal');
+            if (whyTerminal) {
+                observer.observe(whyTerminal);
+                
+                // Add staggered animation to list items
+                const listItems = whyTerminal.querySelectorAll('li');
+                listItems.forEach((item, index) => {
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateY(20px)';
+                    
+                    setTimeout(() => {
+                        item.style.transition = 'all 0.5s ease';
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateY(0)';
+                    }, 300 + (index * 100));
+                });
+            }
+
+            // Auto-switch between terminal tabs for demo effect
+            let currentTabIndex = 0;
+            const tabAutoSwitch = () => {
+                currentTabIndex = (currentTabIndex + 1) % tabButtons.length;
+                tabButtons[currentTabIndex].click();
+            };
+            
+            // Start the auto-switching after a delay
+            setTimeout(() => {
+                setInterval(tabAutoSwitch, 5000); // Switch tabs every 5 seconds
+            }, 8000); // Start switching after 8 seconds
+        });
+    </script>
+</body>
+</html>

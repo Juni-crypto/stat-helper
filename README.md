@@ -1,10 +1,14 @@
-# Kubernetes & Docker Monitoring Tool
+# Kubernetes & Docker Monitoring Tool (Stat-Helper)
 
 ![Version](https://img.shields.io/badge/version-v1.0.0-blue.svg)
 ![Platform](https://img.shields.io/badge/platform-Linux%20%7C%20macOS%20%7C%20Windows-lightgrey.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
 A comprehensive, terminal-based monitoring tool for Kubernetes clusters, Docker environments, and system resources. This tool provides a unified interface for managing and monitoring your containerized infrastructure with an intuitive menu-driven approach.
+
+## 🌐 Website
+
+Visit our **[Official Website](index.html)** for a comprehensive overview of Stat-Helper, installation instructions, screenshots, and more!
 
 ## 🌟 Features
 
